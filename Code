@@ -1,274 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Celina's Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Celina P | Portfolio</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<!-- Google Fonts & Font Awesome -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    body {
-      font-family: 'Quicksand', sans-serif;
-      background: #fafaff;
-      color: #222;
-      line-height: 1.6;
-    }
+<style>
+  /* Basic Reset */
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
-    .container {
-      width: 90%;
-      max-width: 900px;
-      margin: 0 auto;
-    }
+  body { background: #f0f0ff; color: #333; }
 
-    header {
-      background: #5a6fd8;
-      color: white;
-      padding: 1rem 0;
-    }
-    header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 1.2rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    nav a:hover {
-      background-color: #3f4ca3;
-      padding: 0.3rem 0.6rem;
-      border-radius: 20px;
-    }
+  a { text-decoration: none; color: inherit; }
 
-    .hero {
-      background: #5a6fd8;
-      color: white;
-      text-align: center;
-      padding: 4rem 0 3rem 0;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .hero .btn {
-      display: inline-block;
-      background: white;
-      color: #5a6fd8;
-      padding: 0.5rem 1.2rem;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 1rem;
-      transition: 0.3s ease;
-    }
-    .hero .btn:hover {
-      transform: scale(1.05);
-      background: #e0e4ff;
-    }
+  .container { width: 90%; max-width: 1000px; margin: auto; padding: 20px 0; }
 
-    section {
-      padding: 3rem 0;
-      border-bottom: 1px solid #ddd;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-    }
+  /* Nav */
+  nav { background: #6a8cff; color: white; padding: 15px 0; }
+  nav .container { display: flex; justify-content: space-between; align-items: center; }
+  nav a { margin-left: 15px; font-weight: 500; color: white; }
 
-    .about-content {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .about-card {
-      background: white;
-      padding: 1rem 1.5rem;
-      border-radius: 15px;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
-      text-align: center;
-      width: 180px;
-      transition: 0.3s ease;
-    }
-    .about-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
-    }
-    .about-card i {
-      font-size: 2rem;
-      color: #5a6fd8;
-      margin-bottom: 0.5rem;
-    }
+  /* Hero */
+  .hero { text-align: center; padding: 80px 0; background: #6a8cff; color: white; }
+  .hero h1 { font-size: 36px; margin-bottom: 10px; }
+  .hero p { margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .btn { background: white; color: #6a8cff; padding: 10px 20px; border-radius: 20px; font-weight: 500; }
 
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-    .skill-category {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 15px;
-      width: 250px;
-    }
-    .skill-category h3 {
-      color: #5a6fd8;
-      margin-bottom: 0.8rem;
-    }
-    .skill-category ul {
-      list-style-type: none;
-    }
-    .skill-category li {
-      margin-bottom: 0.4rem;
-    }
-    .skill-category li i {
-      color: #5a6fd8;
-      width: 20px;
-    }
+  /* Section titles */
+  section { padding: 50px 0; }
+  section h2 { text-align: center; margin-bottom: 30px; font-size: 28px; }
 
-    .project {
-      background: #f2f2ff;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-radius: 10px;
-      transition: 0.3s ease;
-    }
-    .project:hover {
-      background: #e5e9ff;
-      transform: scale(1.01);
-    }
-    .project h3 {
-      color: #5a6fd8;
-    }
-    .project a {
-      display: inline-block;
-      margin-top: 0.8rem;
-      color: #5a6fd8;
-      font-weight: 600;
-      text-decoration: none;
-      border: 1px solid #5a6fd8;
-      padding: 0.3rem 1rem;
-      border-radius: 20px;
-      transition: 0.3s ease;
-    }
-    .project a:hover {
-      background: #5a6fd8;
-      color: white;
-    }
+  /* About */
+  .about-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+  .about-card { background: white; padding: 20px; width: 220px; text-align: center; border-radius: 10px; }
+  .about-card i { font-size: 30px; color: #6a8cff; margin-bottom: 10px; }
 
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-    .contact-links a {
-      background: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 30px;
-      text-decoration: none;
-      color: #222;
-      font-weight: 500;
-      box-shadow: 2px 2px 6px rgba(0,0,0,0.05);
-      transition: 0.3s ease;
-    }
-    .contact-links a:hover {
-      background: #5a6fd8;
-      color: white;
-      transform: scale(1.05);
-    }
-    .contact-links i {
-      margin-right: 0.5rem;
-      color: #5a6fd8;
-    }
-    .contact-links a:hover i {
-      color: white;
-    }
+  /* Skills */
+  .skills-wrapper { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+  .skill-card { background: white; padding: 20px; width: 250px; border-radius: 10px; }
+  .skill-card h3 { margin-bottom: 10px; color: #6a8cff; }
+  .skill-card ul { list-style: none; }
+  .skill-card li { margin-bottom: 5px; }
 
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 0;
-      margin-top: 2rem;
-    }
-  </style>
+  /* Experience */
+  .timeline { padding-left: 10px; border-left: 3px solid #6a8cff; }
+  .exp-item { margin-bottom: 20px; }
+  .exp-card { background: white; padding: 15px; border-radius: 10px; }
+  .exp-title { font-weight: 600; margin-bottom: 5px; }
+  .exp-company { font-size: 14px; margin-bottom: 5px; color: #555; }
+
+  /* Contact */
+  .contact-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+  .contact-card { background: white; padding: 20px; width: 200px; text-align: center; border-radius: 10px; cursor: pointer; }
+  .contact-card i { font-size: 25px; color: #6a8cff; margin-bottom: 5px; }
+
+  /* Copy alert */
+  .copy-alert { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #6a8cff; color: white; padding: 10px 15px; border-radius: 15px; display: none; }
+
+  /* Footer */
+  footer { background: #6a8cff; color: white; padding: 20px 0; text-align: center; margin-top: 50px; }
+</style>
 </head>
 <body>
 
-<header>
+<!-- Nav -->
+<nav>
   <div class="container">
     <h3>Celina P</h3>
-    <nav>
+    <div>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
-    </nav>
+    </div>
   </div>
-</header>
+</nav>
 
+<!-- Hero -->
 <section class="hero">
   <div class="container">
     <h1>Hi, I'm Celina</h1>
     <p>12th-grade student interested in communications, partnerships, and youth initiatives.</p>
-    <a href="#projects" class="btn">See my work</a>
+    <a href="#experience" class="btn">View My Experience</a>
   </div>
 </section>
 
+<!-- About -->
 <section id="about">
   <div class="container">
     <h2>About Me</h2>
-    <div class="about-content">
-      <div class="about-card">
-        <i class="fa-solid fa-user-graduate"></i>
-        <h3>Student</h3>
-        <p>Passionate about leadership and youth initiatives.</p>
-      </div>
-      <div class="about-card">
-        <i class="fa-solid fa-handshake"></i>
-        <h3>Community Builder</h3>
-        <p>Active in youth organizations.</p>
-      </div>
-      <div class="about-card">
-        <i class="fa-solid fa-lightbulb"></i>
-        <h3>Creative Thinker</h3>
-        <p>Enjoy designing programs and partnerships.</p>
-      </div>
-      <div class="about-card">
-        <i class="fa-solid fa-shop"></i>
-        <h3>Entrepreneur</h3>
-        <p>Running an online shop since 2021.</p>
-      </div>
+    <div class="about-grid">
+      <div class="about-card"><i class="fa-solid fa-user"></i><h3>Student</h3><p>Passionate about leadership and youth initiatives.</p></div>
+      <div class="about-card"><i class="fa-solid fa-people-group"></i><h3>Community Builder</h3><p>Active in youth organizations.</p></div>
+      <div class="about-card"><i class="fa-solid fa-lightbulb"></i><h3>Creative Thinker</h3><p>Enjoy designing programs and partnerships.</p></div>
+      <div class="about-card"><i class="fa-solid fa-store"></i><h3>Entrepreneur</h3><p>Running an online shop since 2021.</p></div>
     </div>
   </div>
 </section>
 
 <section id="skills">
-  <div class="container">
-    <h2>Skills</h2>
-    <div class="skills-list">
-      <div class="skill-category">
-        <h3><i class="fa-solid fa-comments"></i> Communication</h3>
-        <ul>
-          <li><i class="fa-solid fa-circle-check"></i> Public Speaking</li>
-          <li><i class="fa-solid fa-circle-check"></i> Stakeholder Comms</li>
-          <li><i class="fa-solid fa-circle-check"></i> Public Relations</li>
-        </ul>
-      </div>
-      <div class="skill-category">
+<div class="container">
+<h2>Skills</h2>
+<div class="skills-wrapper">
+<div class="skill-card">
+<h3><i class="fa-solid fa-comments"></i> Communication</h3>
+<ul>
+	<li><i class="fa-solid fa-circle-check"></i> Public Speaking</li>
+	<li><i class="fa-solid fa-circle-check"></i> Stakeholder Communication</li>
+	<li><i class="fa-solid fa-circle-check"></i> Public Relations</li>
+</ul>
+</div>
+      <div class="skill-card">
         <h3><i class="fa-solid fa-people-group"></i> Leadership</h3>
         <ul>
           <li><i class="fa-solid fa-circle-check"></i> Team Collaboration</li>
@@ -276,10 +122,11 @@
           <li><i class="fa-solid fa-circle-check"></i> Event Planning</li>
         </ul>
       </div>
-      <div class="skill-category">
+      <div class="skill-card">
         <h3><i class="fa-solid fa-chart-line"></i> Business</h3>
         <ul>
           <li><i class="fa-solid fa-circle-check"></i> Marketing Strategy</li>
+          <li><i class="fa-solid fa-circle-check"></i> Sales Management</li>
           <li><i class="fa-solid fa-circle-check"></i> Customer Relations</li>
         </ul>
       </div>
@@ -287,44 +134,92 @@
   </div>
 </section>
 
-<section id="projects">
+<section id="experience">
   <div class="container">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Youth in STEM – PR Officer</h3>
-      <p>Managed social media, 250+ emails, and partnerships. Led meetings and drafted MoUs. Member of the Month multiple times.</p>
-      <a href="#">View details →</a>
-    </div>
-    <div class="project">
-      <h3>Generation Girl Tangerang – Head of Partnerships</h3>
-      <p>Led a team of 5+, built 7+ strategic partnerships, reached 815 beneficiaries. Chapter won Most Outstanding.</p>
-      <a href="#">View details →</a>
-    </div>
-    <div class="project">
-      <h3>Online Shop Owner</h3>
-      <p>Increased sales by 60% in two years, 4.7-star rating, 50% higher order value through upselling.</p>
-      <a href="#">View shop →</a>
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="exp-item">
+        <div class="exp-card">
+          <div class="exp-title"><i class="fa-solid fa-flask exp-icon"></i>Public Relations Officer</div>
+          <div class="exp-company">Youth in STEM Indonesia | 2025 – Present</div>
+          <ul>
+            <li>Managed the organization’s social media platforms and handled 250+ emails, ensuring timely and professional communication with partners and stakeholders.</li>
+            <li>Led meetings with potential partners and drafted, reviewed, and signed MoUs, facilitating clear collaboration between international and local partners.</li>
+            <li>Recognized as Member of the Month (February & March 2025, November 2025), reflecting consistent dedication, reliability, and impact.</li>
+            <li>Achieved a perfect 5/5 performance evaluation and ranked 3rd on the Batch 7 Leaderboard, demonstrating high performance and peer recognition.</li>
+          </ul>
+        </div>
+      </div>
+           <div class="exp-item">
+        <div class="exp-card">
+          <div class="exp-title"><i class="fa-solid fa-handshake exp-icon"></i>Head of Partnerships</div>
+          <div class="exp-company">Generation Girl Tangerang</div>
+          <ul>
+            <li>Led partnership strategy and managed a team of 5+ volunteers, contributing to the chapter being recognized as Most Outstanding Chapter of the Batch and one of the most innovative chapters among 13 chapters.</li>
+            <li>Established and managed relationships with 7+ strategic partners and 35+ media partners, expanding program reach, visibility, and external engagement.</li>
+	    <li>Oversaw the delivery of 6 innovative programs totaling 60+ hours within 6 months, strengthening program quality and organizational impact.</li>
+            <li>Reached 815 beneficiaries through partnership-driven initiatives, increasing access to STEM education and community empowerment programs.</li>
+</ul>
+</div>
+</div>
+
+           <div class="exp-item">
+        <div class="exp-card">
+          <div class="exp-title"><i class="fa-solid fa-keyboard exp-icon"></i>Data Entry</div>
+          <div class="exp-company">Newlab+ Group</div>
+          <ul>
+            <li>Maintained an exceptional 99.9% accuracy rate in data entry, significantly reducing errors and improving data quality.</li>
+            <li>Provided the data analysis team with accurate, well-organized datasets, enabling more effective analysis and data-driven decision-making.</li>
+	    <li>Implemented efficient data entry techniques and tools, reducing processing time by 20% and increasing overall productivity.</li>
+	    <li>Managed and processed high volumes of data, averaging 500 entries per day, while consistently meeting deadlines with precision.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-card">
+          <div class="exp-title"><i class="fa-solid fa-store exp-icon"></i>Online Shop Owner</div>
+          <div class="exp-company">Shopee | 2021 – Present</div>
+          <ul>
+            <li>Increased sales revenue by 60% within the first two years through targeted marketing and effective sales strategies.</li>
+            <li>Maintained a 4.7-star rating from customer reviews, reflecting exceptional product quality and service.</li>
+	    <li>Boosted average order value by 50% by implementing upselling and cross-selling strategies.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Contact -->
 <section id="contact">
   <div class="container">
     <h2>Contact Me</h2>
-    <div class="contact-links">
-      <a href="mailto:celinapinonkuan26@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-      <a href="#"><i class="fa-solid fa-phone"></i> 0895-1348-8346</a>
-      <a href="#"><i class="fa-brands fa-instagram"></i> @astrxnoxa</a>
-      <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    <div class="contact-grid">
+      <div class="contact-card" onclick="copyText('celinapinonkuan26@gmail.com')"><i class="fa-solid fa-envelope"></i><h3>Email</h3><p>Click to copy</p></div>
+      <div class="contact-card" onclick="copyText('089513488346')"><i class="fa-solid fa-phone"></i><h3>Phone</h3><p>Click to copy</p></div>
+      <div class="contact-card" onclick="window.open('https://instagram.com/astrxnoxa')"><i class="fa-brands fa-instagram"></i><h3>Instagram</h3><p>@astrxnoxa</p></div>
+      <div class="contact-card" onclick="window.open('https://www.linkedin.com/in/celina-pinonkuan-813435281/')"><i class="fa-brands fa-linkedin"></i><h3>LinkedIn</h3><p>View Profile</p></div>
     </div>
   </div>
 </section>
 
+<div id="copyAlert" class="copy-alert">Copied!</div>
+
+<!-- Footer -->
 <footer>
   <div class="container">
-    <p>© 2026 Celina's Portfolio</p>
+    <p>© 2026 Celina Portfolio | celinapinonkuan26@gmail.com | Indonesia</p>
   </div>
 </footer>
+
+<script>
+function copyText(text){
+  navigator.clipboard.writeText(text);
+  const alertBox = document.getElementById("copyAlert");
+  alertBox.style.display = "block";
+  setTimeout(()=>{ alertBox.style.display = "none"; }, 2000);
+}
+</script>
 
 </body>
 </html>
